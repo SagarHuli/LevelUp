@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NumberOfGoodPairs {
+    /*
+    https://leetcode.com/problems/number-of-good-pairs/description/
+     */
     public int numIdenticalPairs(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         int total = 0;
