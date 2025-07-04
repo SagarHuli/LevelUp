@@ -3,6 +3,9 @@ package HashTable;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * https://leetcode.com/problems/encode-and-decode-tinyurl/
+ */
 public class EncodeAndDecodeTinyurl {
 
     Map<String,String> encode;
