@@ -1,12 +1,9 @@
 package HashTable;
 
 public class DesignHashMap {
-}
-
-class MyHashMap {
 
     int [][] ar;
-    public MyHashMap() {
+    public DesignHashMap() {
         this.ar = new int[1000001][2];
     }
 
