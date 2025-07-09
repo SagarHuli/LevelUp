@@ -1,6 +1,11 @@
 package LinkedList;
 
 public class RemoveDuplicatesFromSortedListII {
+    /**
+     * https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+     * @param head
+     * @return
+     */
     public ListNode deleteDuplicates(ListNode head) {
         ListNode curr = head;
         ListNode prev = null;
