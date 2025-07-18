@@ -10,14 +10,14 @@ public class _132Pattern {
     public boolean find132pattern(int[] nums) {
         Stack<int []> stack = new Stack<>();
         int curMin = nums[0];
-        for(int i =0;i<nums.length;i++) {
-            while(!stack.isEmpty() && nums[i] >= stack.peek()[0]) {
+        for (int num : nums) {
+            while (!stack.isEmpty() && num >= stack.peek()[0]) {
                 stack.pop();
             }
-            if(!stack.isEmpty() && nums[i] > stack.peek()[1])
+            if (!stack.isEmpty() && num > stack.peek()[1])
                 return true;
-            stack.push(new int[]{nums[i], curMin});
-            curMin = Math.min(curMin, nums[i]);
+            stack.push(new int[]{num, curMin});
+            curMin = Math.min(curMin, num);
         }
         return false;
     }
