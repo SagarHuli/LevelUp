@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpiralMatrix {
+    /**
+     * https://leetcode.com/problems/spiral-matrix/
+     * @param matrix
+     * @return
+     */
     public List<Integer> spiralOrder(int[][] matrix) {
         int iTop=0,iBottom=matrix.length-1,jLeft=0,jRight=matrix[0].length-1;
         List<Integer> list = new ArrayList<>();
