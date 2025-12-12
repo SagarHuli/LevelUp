@@ -5,7 +5,7 @@ import java.util.Stack;
 public class MinimumAddToMakeParanthesesValid {
 
     /*
-
+    https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
      */
     public int minAddToMakeValid(String s) {
         Stack<Character> st = new Stack<>();
