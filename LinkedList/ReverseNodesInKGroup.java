@@ -51,4 +51,42 @@ public class ReverseNodesInKGroup {
         }
         return prev;
     }
+
+    ///  Simpler version
+
+    public ListNode reverseKGroupV2(ListNode head, int k) {
+        ListNode cur = head;
+        int size = 0;
+        while(cur != null) {
+            cur = cur.next;
+            size++;
+        }
+        int groups = size/k;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        cur = head;
+        ListNode prevLeft = dummy;
+        while(groups > 0) {
+            int len = k;
+            ListNode prev = null;
+            // Keep track of the node that will become the tail of this reversed group
+            ListNode currentGroupTail = cur;
+            while(len > 0 && cur != null) {
+                ListNode nextNode = cur.next;
+                cur.next = prev;
+                prev = cur;
+                cur = nextNode;
+                len--;
+            }
+            // Connect the previous part of the list to the new head (prev)
+            prevLeft.next = prev;
+            // Connect the tail of the reversed group to the remaining part (cur)
+            currentGroupTail.next = cur;
+            // Move prevLeft to the tail of the current group for the next iteration
+            prevLeft = currentGroupTail;
+            groups--;
+        }
+
+        return dummy.next;
+    }
 }

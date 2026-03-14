@@ -25,4 +25,22 @@ public class RemoveNthNodeFromEndOfList {
             return head;
         } else return null;
     }
+
+    ///  One pass
+
+    public ListNode removeNthFromEndV2(ListNode head, int n) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while(n > 0) {
+            fast = fast.next;
+            n--;
+        }
+        if(fast == null) return slow.next;
+        while(fast!=null && fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        if(slow.next != null) slow.next = slow.next.next;
+        return head;
+    }
 }
